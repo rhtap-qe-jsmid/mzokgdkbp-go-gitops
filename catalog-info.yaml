@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mzokgdkbp-go-gitops
+  description: This is GitOps manifest for mzokgdkbp-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: mzokgdkbp-go
+    janus-idp.io/tekton: mzokgdkbp-go
+    backstage.io/kubernetes-id: mzokgdkbp-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mzokgdkbp-go
